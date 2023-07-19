@@ -68,3 +68,4 @@ route::get('deletecategory/{id}',[admincontroller::class,'deletecategory']);
 route::get('editcategory/{id}',[admincontroller::class,'editcategory']);
 route::post('updatecategory/{id}',[admincontroller::class,'updatecategory']);
 route::get('updatestore',[usercontroller::class,'updatestore']);
+route::get('login',[homecontroller::class,'login1']);

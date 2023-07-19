@@ -28,6 +28,9 @@ class homecontroller extends Controller
         return view('welcome', ['data'=>$data]);
     }
     
+    public function login1(){
+      return view('login');
+    }
     public function register11(){
     return view('register');
     }
@@ -255,7 +258,8 @@ public function view_category(){
 }
 public function products(){
   $data=product::all();
-  return view('products',compact('data'));
+  $cat=category::all();
+  return view('products',compact('data','cat'));
 
 }
 public function comment(Request $request){

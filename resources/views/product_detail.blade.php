@@ -83,7 +83,7 @@
               <li class="well_21"><a href="#"><i class="fa fa-pinterest"></i> Pinterest</a></li>
           </ul><br>
           <div class="" style="background-color: white; padding:10px;10px;10px;10px;">
-            <h4>if your not login or register? you must Login or register first before continue <br> click for <a href="{{ url('/') }}">login</a> or  <a href="{{ url('/') }}">register </h4></a>
+            <h4>if your not login or register? you must Login or register first before continue <br> click for <a href="{{ url('login') }}">login</a> or  <a href="{{ url('register') }}">register </h4></a>
           </div>
          </div>
         </div>

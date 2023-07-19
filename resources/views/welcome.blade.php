@@ -115,9 +115,9 @@
                <div class="thumbnail" style="height: fit-content; ">
                 <div class="product_card" > 
                     <img src="/img/{{ $data1->image }}" class="bd-placeholder-img card-img-top" width="100%" height="240px">
-                    {{-- <br>
-                   <br> --}}
-                   <br>
+                    <br>
+                  
+                 
                    <div class="card-body" >
                       {{-- <h5 class="card-title text-center" > --}}
                         <ul>
@@ -150,7 +150,7 @@
                             <p class="btn-details">
                                 <i class="fa fa-list"></i>&nbsp; &nbsp;<a href="{{ url('product_detail',$data1->id) }}" class="hidden-sm">More details</a></p> --}}
                         </div>
-                        {{-- <br> --}}
+                        <br>
                     </div>
                   </div>
                 </div>

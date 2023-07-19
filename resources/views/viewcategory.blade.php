@@ -135,62 +135,76 @@
        </div>
     </div>
     <section id="mauris">
-        <div class="container">
-         <div class="row">
-          <div class="col-sm-12">
-           <div class="col-sm-9">
-             </div>
-            </div>
-            <div class="mauris_3">
-           <div id="products" class="row list-group contain-fluid">
-             @forelse ($data as $data1)
-               <div class="item  col-xs-4 col-lg-4 h-60">
-                   <div class="thumbnail" style="height: fit-content; ">
-                    <div class="card h-45" style="height: fit-content; max-height:100%;" >
-                        <img src="/img/{{ $data1->image }}" class="bd-placeholder-img card-img-top" width="100%" height="280"><br>
-                       <br><div class="card-body" style="padding-right: 20px; padding-left: 20px">
-                          <h5 class="card-title" ><b>{{ $data1->product_name }} 
-                            @if($data1->quantity <= 0)
-                            <p class="text text-danger " style="display: flex">.......................this product is Out of stock</p><br>
-                            
-                        @else
-    
-                                </b></h5>
-                                
-                    
-                                <br>
-                            <p class="text text-primary " style="display: flex">product available</p><br>
-                        @endif
-                           <h4><p class="card-text text-warning" style="font-weight: 400px"><b>{{ $data1->price }} Frw</b></p></h4>
-                            <hr>
-                            <div class="separator clear-left" style="display: flex; padding-right:20px">
-                                <p class="btn-add">
-                                    <i class="fa fa-shopping-cart"></i>&nbsp; &nbsp;<a href="{{ url('product_detail',$data1->id) }}" class="hidden-sm">Add to cart</a></p> &nbsp; &nbsp; | &nbsp; &nbsp;
-                                <p class="btn-details">
-                                    <i class="fa fa-list"></i>&nbsp; &nbsp;<a href="{{ url('product_detail',$data1->id) }}" class="hidden-sm">More details</a></p>
-                            </div>
-                            <br>
-                        </div>
-                      </div>
-                   </div>
-               </div>
-             
-               @empty
-               <div>
-                <h1>No data found!!!</h1>
-               </div>
-          
-            @endforelse
-               {{-- {{$data1->links('welcome')}}    --}}
-              
-    
-            </div>
-          
+      <div class="container">
+       <div class="row">
+        {{-- <div class="col-sm-12">
+         <div class="col-sm-9">
            </div>
+          </div> --}}
+          <div class="mauris_3">
+         <div id="products" class="row list-group contain-fluid">
+           @forelse ($data as $data1)
+             <div class=" col-lg-3 col-sm-3 text-center">
+                 <div class="thumbnail" style="height: fit-content; ">
+                  <div class="product_card" > 
+                      <img src="/img/{{ $data1->image }}" class="bd-placeholder-img card-img-top" width="100%" height="240px">
+                      <br>
+                    
+                   
+                     <div class="card-body" >
+                        {{-- <h5 class="card-title text-center" > --}}
+                          <ul>
+                            <li> <b>{{ $data1->product_name }} </b></li></ul>
+                          <div class="col-lg-3">
+                            <a href="{{ url('product_detail',$data1->id) }}" class="hidden-sm"><i class="fa fa-shopping-cart"></i>+ cart</a>
+                            
+                          </div>
+                          <div class="col-lg-5 text-left">
+                          <ul>
+                           
+                            <li class="text-warning text-center">{{ $data1->price }} FRW</li>   
+                            
+                            @if($data1->quantity <= 0)
+                            {{-- <li> Out of stock</li> --}}
+                            @else
+                            {{-- <li class="text-center alert-dark" >product available</li> --}}
+                            @endif
+                          </ul>
+                            </div>
+                          <div class="col-sm-3">
+                            {{-- <p class="btn-details"> --}}
+                             <a href="{{ url('product_detail',$data1->id) }}" class="hidden-sm"> <i class="fa fa-list"></i>Details</a>
+                            {{-- </p> --}}
+                      
+                        </div>
+                          <div class="separator clear-left content-center text-center" style="display: flex; padding-right:20px">
+                              {{-- <p class="btn-add">
+                                  <i class="fa fa-shopping-cart"></i>&nbsp; &nbsp;<a href="{{ url('product_detail',$data1->id) }}" class="hidden-sm">Add to cart</a></p> 
+                              <p class="btn-details">
+                                  <i class="fa fa-list"></i>&nbsp; &nbsp;<a href="{{ url('product_detail',$data1->id) }}" class="hidden-sm">More details</a></p> --}}
+                          </div>
+                          <br>
+                      </div>
+                    </div>
+                  </div>
+             </div>
+           
+             @empty
+             <div>
+              <h1>No data found!!!</h1>
+             </div>
+        
+          @endforelse
+             {{-- {{$data1->links('welcome')}}    --}}
+            
+  
           </div>
+        
          </div>
         </div>
-       </section>
+       </div>
+      </div>
+     </section>
  
 
 @endsection
