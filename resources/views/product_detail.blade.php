@@ -9,7 +9,7 @@
             <div class="product_details_1 clearfix">
                     <div class="carousel slide article-slide" id="article-photo-carousel">
                         <!-- Wrapper for slides -->
-                        <br><br>
+                        {{-- <br><br> --}}
                         <div class="carousel-inner cont-slider">
                         <div class="item">
                             <div class="magnify clearfix"><img data-toggle="magnify" src="img/{{ $product->image }}" width="100%" height="400px" alt=""><div class="magnify-large" style="background: url(&quot;http://i.imgur.com/1fgr2IO.jpg&quot;) no-repeat;"></div></div>
@@ -46,12 +46,10 @@
 
         <div class="col-sm-5">
          <div class="product_details_2">
-          <H3>Product Name: </h3> 
-            <hr>
-           <h4> {{ $product->product_name }}</h4>
+          <H4>Product Name: {{ $product->product_name }}</h4>
         <br>
         <hr>
-          <h4>Description: &nbsp;{{ $product->description }} </h4>
+          <p>Description: &nbsp;{{ $product->description }} </p>
           <hr>
          </div>
          <div class="product_details_3">
@@ -64,8 +62,10 @@
                     <input type="number" class=" bg-secondary border-0 text-center px-3" value="1" name="value" min="1" style="width:50px; height:35px">
                         <button type="submit" name="cart" class="fa fa-shopping-cart mr-1" style="width:150px; height:35px; font-size:15px"><i  > Add to cart</li></button>
                     @else
-                    <p style="padding-bottom:0px"><h3 class="text text-danger">...........this product is out of stock! </h3></p>
-                    <br><br>
+                    <p style="padding-bottom:0px">
+                        <h3 class="text text-danger">This product is out of stock! </h3>
+                    </p>
+                   
                     <li class="well_19"><a href="{{ url('/') }}"><i class=""></i>Select Other product</a></li>
                     @endif 
                     
